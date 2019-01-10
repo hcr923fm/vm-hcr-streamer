@@ -1,1 +1,0 @@
-ffmpeg -f alsa -ac 2 -i hw:0,0 -f mp3 -b:a 128k -ac 2 - | ezstream -c /home/vagrant/ezstream.xml

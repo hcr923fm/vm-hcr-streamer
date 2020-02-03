@@ -3,13 +3,19 @@
 sudo apt-add-repository ppa:ubuntu-audio-dev/alsa-daily
 # FFMPeg
 sudo apt-get update
-sudo apt-get install -y build-essential dkms alsa-tools libasound2-dev libasound2 alsa-base alsa-utils git automake pkg-config libsndfile-dev libmp3lame-dev ffmpeg unattended-upgrades
+#sudo apt-get install -y build-essential dkms alsa-tools libasound2-dev libasound2 alsa-base alsa-utils git automake pkg-config libsndfile-dev libmp3lame-dev ffmpeg unattended-upgrades
 sudo apt-get install -y linux-image-extra-`uname -r`
 sudo apt-get install -y --reinstall linux-image-extra-`uname -r`
 sudo apt-get install -y oem-audio-hda-daily-dkms
 sudo apt-get autoremove -y
 sudo apt-get upgrade -y
 sudo apt-get dist-upgrade -y
+
+sudo apt-get install build-essential dkms alsa-tools libasound2-dev libasound2 alsa-base alsa-utils pkg-config unattended-upgrades liquidsoap
+
+sudo ldconfig
+
+cp -u hcr-stream.liq
 
 sudo usermod -a -G audio vagrant
 
@@ -24,11 +30,10 @@ sudo usermod -a -G audio vagrant
 # chown vagrant /home/vagrant/ezstream.xml
 # chmod 400 /home/vagrant/ezstream.xml
 
-wget -q http://sourceforge.net/projects/darkice/files/darkice/1.3/darkice-1.3.tar.gz/download -O darkice.tar.gz
-tar xvf darkice.tar.gz
-cd darkice-1.3
-./configure && make && sudo make install
+#wget -q http://sourceforge.net/projects/darkice/files/darkice/1.3/darkice-1.3.tar.gz/download -O darkice.tar.gz
+##tar xvf darkice.tar.gz
+#cd darkice-1.3
+#./configure && make && sudo make install
 
-cp -u /vagrant/darkice.cfg /home/vagrant/darkice.cfg
+#cp -u /vagrant/darkice.cfg /home/vagrant/darkice.cfg
 
-sudo ldconfig

@@ -16,7 +16,7 @@ sudo apt-get install build-essential dkms alsa-tools libasound2-dev libasound2 a
 
 sudo ldconfig
 
-cp -u /vagrant/hcr-stream.liq /etc/liquidsoap/
+sudo cp -u /vagrant/hcr-stream.liq /etc/liquidsoap/
 # Set time and time zone
 sudo ln -fs /usr/share/zoneinfo/Europe/London /etc/localtime
 sudo dpkg-reconfigure -f noninteractive tzdata

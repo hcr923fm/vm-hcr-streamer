@@ -12,11 +12,11 @@ sudo apt-get autoremove -y
 sudo apt-get upgrade -y
 sudo apt-get dist-upgrade -y
 
-sudo apt-get install build-essential dkms alsa-tools libasound2-dev libasound2 alsa-base alsa-utils pkg-config unattended-upgrades liquidsoap ntp
+sudo apt-get install build-essential dkms alsa-tools libasound2-dev libasound2 alsa-base alsa-utils pkg-config unattended-upgrades liquidsoap liquidsoap-plugin-alsa ntp
 
 sudo ldconfig
 
-cp -u hcr-stream.liq
+cp -u hcr-stream.liq /etc/liquidsoap/
 # Set time and time zone
 echo "server 192.168.0.254 prefer" >> /etc/ntp.conf
 sudo /etc/init.d/ntp restart

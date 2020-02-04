@@ -25,6 +25,7 @@ echo "server 192.168.0.254 prefer" > /etc/ntp.conf
 sudo service ntp restart
 
 sudo usermod -a -G audio vagrant
+sudo usermod -a -G audio liquidsoap
 
 sudo /etc/init.d/liquidsoap start
 

@@ -12,16 +12,17 @@ sudo apt-get autoremove -y
 sudo apt-get upgrade -y
 sudo apt-get dist-upgrade -y
 
-sudo apt-get install build-essential dkms alsa-tools libasound2-dev libasound2 alsa-base alsa-utils pkg-config unattended-upgrades liquidsoap liquidsoap-plugin-alsa ntp
+sudo apt-get install build-essential dkms alsa-tools libasound2-dev libasound2 alsa-base alsa-utils pkg-config unattended-upgrades liquidsoap liquidsoap-plugin-alsa ntp -y
 
 sudo ldconfig
 
-cp -u hcr-stream.liq /etc/liquidsoap/
+cp -u /vagrant/hcr-stream.liq /etc/liquidsoap/
 # Set time and time zone
-echo "server 192.168.0.254 prefer" >> /etc/ntp.conf
-sudo /etc/init.d/ntp restart
 sudo ln -fs /usr/share/zoneinfo/Europe/London /etc/localtime
 sudo dpkg-reconfigure -f noninteractive tzdata
+echo "server 192.168.0.254 prefer" > /etc/ntp.conf
+#sudo /etc/init.d/ntp restart
+sudo service ntp restart
 
 sudo usermod -a -G audio vagrant
 

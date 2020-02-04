@@ -27,7 +27,7 @@ sudo service ntp restart
 sudo usermod -a -G audio vagrant
 sudo usermod -a -G audio liquidsoap
 
-sudo /etc/init.d/liquidsoap start
+sudo /etc/init.d/liquidsoap restart
 
 # wget -q http://downloads.xiph.org/releases/ezstream/ezstream-0.6.0.tar.gz
 # tar xzf ezstream-0.6.0.tar.gz

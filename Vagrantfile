@@ -8,7 +8,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.provider :virtualbox do |vbox|
     vbox.customize ["modifyvm", :id, "--memory", 2048,
-    	"--cpus", 1,
+    	"--cpus", 2,
     	"--audio","dsound",
     	"--audioin", "on",
     	"--audioout","off",
